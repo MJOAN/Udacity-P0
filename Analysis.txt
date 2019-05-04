@@ -1,0 +1,51 @@
+Step 3 - Calculate Big O
+
+Task0 Worst Case Big O Run Time Analysis: 
+* List look up is constant time.
+1. Print first record of texts: O(1)
+2. Print last record of calls: O(1)
+
+
+Task1 Worst Case Big O Run Time Analysis:
+1. Print count of unique phone numbers in calls list: 
+    a. for loop = O(N)
+    b. if statement = O(N)
+    c. result: O(N) + O(N) = O(N)
+
+
+Task2 Worst Case Big O Run Time Analysis:
+1. Print max duration on phone:  
+    a. for loop = O(N)
+    b. if statement = O(N) 
+    c. if statement = O(N) 
+    d. for loop = O(M)
+    e. map iteration = O(N)
+    f. result: O(N) * 4 + O(M) = O(N+M)
+
+Task3 Worst Case Big O Run Time Analysis:
+1. Print unique area codes:
+    a. if statement = O(N) 
+    b. for loop = O(N) 
+    c. if statement = O(N) 
+    d. add to list = O(1)
+    e. result: O(N) * 3 + O(1) = O(N)
+
+2.  Print percentage of calls: 
+    a. for loop = O(N) + 2
+        function call * 2 = 2
+    b. if statement = O(N) 
+    c. if statement = O(N)
+    d. division and round statement = 2 
+    e. result = O(N) * 3 + 4 = O(N)
+
+Tas4 Worst Case Big O Run Time Analysis:
+1. Print telemarketers list:
+    a. if statement = O(N)
+    b. for loop = O(N)
+    c. if statement = O(N) 
+    d. for loop = O(M)
+    e. if statement = O(M) 
+    f. list append = O(1) 
+    g. ternary expression = O(P)
+    h. result: O(N) * 3 + O(M) * 2 + O(1) + O(P) = O(N+M+P)
+
