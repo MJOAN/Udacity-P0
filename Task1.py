@@ -19,17 +19,16 @@ Print a message:
 "There are <count> different telephone numbers in the records."
 """
 
-def unique_phone_count(calls):
-    result = set()
-    for call in calls:
-        if call[0] not in result:
-            result.add(call[0])
-        else: 
-            result.add(call[1])
-    count = len(result)
-    return count
+def unique_phone_count(calls):        
+    combined = set()
+    for a,b in zip(calls, texts):
+        group = [a[0], a[1], b[0], b[1]]
+        for item in group: 
+            combined.add(item)
 
-unique_phone_count(calls) # 544
+    return len(combined)
+
+unique_phone_count(calls) # 570
 count = unique_phone_count(calls) 
 print('There are', count, 'different telephone numbers in the records.')
-# There are 544 different telephone numbers in the records.
+# There are 570 different telephone numbers in the records.

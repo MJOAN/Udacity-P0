@@ -1,52 +1,77 @@
-Step 3 - Calculate Big O
+Step 3 - Calculate Big O Worst Case Run Time Analysis
 
-Task0 Worst Case Big O Run Time Analysis: 
-* List look up is constant time.
-1. Print first record of texts: O(1)
-2. Print last record of calls: O(1)
+Task0: 
+1. Print first record and last record of texts: 
+    a. first record lookup is constant time = O(1) 
+    b. last record lookup is constant time = O(1) 
+    c. result: O(1) * 2 = O(1)
 
 
-Task1 Worst Case Big O Run Time Analysis:
+Task1:
 1. Print count of unique phone numbers in calls list: 
-    a. for loop = O(N)
-    b. if statement = O(N)
-    c. result: O(N) + O(N) = O(N)
+    a. assign combined set variable = O(1)
+    b. for loop using zip() on two separate lists N and M = O(N*M)            *cite:1
+    c. assign group variable = O(1)
+    d. for loop over group list = O(N)
+    e. add item each iteration to combined set = O(1)
+    f. result: O(1) + O(N*M) + O(1) + O(N) + O(1) = O(N*M)
 
 
-Task2 Worst Case Big O Run Time Analysis:
-1. Print max duration on phone:  
-    a. for loop = O(N)
-    b. if statement = O(N) 
-    c. if statement = O(N) 
-    d. for loop = O(M)
-    e. map iteration = O(N)
-    f. result: O(N) * 4 + O(M) = O(N+M)
+Task2:
+1. Print max duration on phone: 
+    a. assign dictionary variable = O(1)
+    b. for loop over call list = O(N)
+    c. assign three variables = O(1) * 3
+    d. if statement over dict keys = O(N) 
+    e. if statement over dict keys = O(N) 
+    f. assign phone duration dictionary variable = O(1)
+    f. for loop iterate over phone duration = O(M)
+    g. sum and map iteration = O(1) + O(N) 
+    h. assign max time variable from dictionary = O(1)
+    i. result: O(1) * 7 + O(N) * 4 + O(M) = O(N+M)
 
-Task3 Worst Case Big O Run Time Analysis:
+Task3:
 1. Print unique area codes:
     a. if statement = O(N) 
-    b. for loop = O(N) 
-    c. if statement = O(N) 
-    d. add to list = O(1)
-    e. sort list = (O log n)
-    f. result: O(N) * 3 + O(1) + (O log N) = O(N log N)
+    b. assign two list variables = O(1) * 2
+    c. for loop iterate over call list = O(N) 
+    d. assign four list variables = O(1) * 4
+    e. if statement = O(N) 
+    f. add to receiver list = O(1)
+    g. for loop iterate over receiver list = O(N)
+    h. if statement = O(N)
+    i. add to code list = O(M)
+    j. sort list = (O log M)
+    k. result: O(N) * 4 + O(1) * 8 + (O log M) + O(M) * 2 = O(N log N)
 
 2.  Print percentage of calls: 
-    a. for loop = O(N) + 2
-        function call * 2 = 2
-    b. if statement = O(N) 
-    c. if statement = O(N)
-    d. division and round statement = 2 
-    e. result = O(N) * 3 + 4 = O(N)
+    a. assign two lists variables = O(1) * 2
+    b. for loop iterate over call list = O(N)
+    c. assign four list variables = O(1) * 4
+    d. if statement = O(N) 
+    e. add to fixed list = O(N)
+    f. if statement = O(N)
+    g. add to from fixed list = O(N)
+    h. assign two variables for division and round = O(1) * 2
+    d. division and round statement = O(1) * 2
+    e. result = O(1) * 10 + O(N) * 5 = O(N)
 
-Tas4 Worst Case Big O Run Time Analysis:
+Task4:
 1. Print telemarketers list:
     a. if statement = O(N)
-    b. for loop = O(N)
-    c. if statement = O(N) 
-    d. for loop = O(M)
-    e. if statement = O(M) 
-    f. list append = O(1) 
-    g. ternary expression = O(P)
-    h. result: O(N) * 3 + O(M) * 2 + O(1) + O(P) = O(N+M+P)
+    b. assign telemarketers set variable = O(1)
+    c. for loop over calls list = O(N)
+    d. assign four call list variables = O(1) * 4
+    e. if statement = O(N) 
+    f. add to telemarketers list = O(1)
+    g. for loop over texts list = O(M)
+    h. assign two list variables = O(1) * 2
+    i. if statement = O(M) 
+    j. add to list = O(1) 
+    k. assign result variable = O(1)
+    l. sort telemarketers list = O(log N)
+    h. result: O(N) * 3 + O(1) * 10 + O(M) * 2 + O(log N) = O(N log N)
 
+
+Citations: 
+1. https://stackoverflow.com/questions/36877715/what-is-the-time-complexity-of-zip-in-python

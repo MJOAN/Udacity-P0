@@ -25,30 +25,31 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 def get_phone_type(phone):
-    if phone.startswith('(0'):
-        return 'fixed_line'
+    if phone.startswith('(080)'):
+        return 'bangalore'
     elif phone.startswith('140'):
         return 'telemarketer'
+    elif phone.startswith('(0'):
+        return 'fixed_lines'
     else:
         return 'mobile_number'
 
-telemarketers_only = []
-not_telemarketers = []
-potential = [] 
-
 def potential_telemarketers(calls, texts): 
-
+    telemarketers_only = set()
+    
     for call in calls:
-        if get_phone_type(call[0]) == 'telemarketer' and get_phone_type(call[1]) != 'telemarketer':
-            telemarketers_only.append(call[0])    
+        caller, receiver = call[0], call[1]
+        caller_type = get_phone_type(caller)
+        
+        if caller != receiver:
+            telemarketers_only.add(caller)
     
     for text in texts:
-        if text[0] or text[1] not in telemarketers_only:
-            not_telemarketers.extend([text[0], text[1]])
+        sender, receiver = text[0], text[1]
+        if sender and receiver not in telemarketers_only:
+            result = sorted(telemarketers_only)
+            
+    print("These numbers could be telemarketers: \n")
+    print('\n'.join(result))
     
-    potential.append(set(telemarketers_only).intersection(set(not_telemarketers)))
-
-print("These numbers could be telemarketers: \n")
-print('\n'.join(set(potential if len(potential) > 0 else telemarketers_only)))
-
 potential_telemarketers(calls, texts)
