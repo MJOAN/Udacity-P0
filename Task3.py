@@ -63,7 +63,7 @@ for call in calls:
         list_of_codes.append(codes)
                 
 print("The numbers called by people in Bangalore have codes:\n")
-print('\n'.join(set(list_of_codes)))
+print('\n'.join(sorted(set(list_of_codes))))
 
 def fixed_percentage(calls):
     from_fixed = []

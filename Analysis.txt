@@ -28,7 +28,8 @@ Task3 Worst Case Big O Run Time Analysis:
     b. for loop = O(N) 
     c. if statement = O(N) 
     d. add to list = O(1)
-    e. result: O(N) * 3 + O(1) = O(N)
+    e. sort list = (O log n)
+    f. result: O(N) * 3 + O(1) + (O log N) = O(N log N)
 
 2.  Print percentage of calls: 
     a. for loop = O(N) + 2
