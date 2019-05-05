@@ -56,3 +56,14 @@ for key, value in phone_dict.items():
 max_time = max(phone_duration, key=phone_duration.get)  
 print(max_time, 'spent the longest time,', phone_duration[max_time], 'seconds, on the phone during September 2016.')
 # (080)33251027 spent the longest time, 90456 seconds, on the phone during September 2016.
+
+
+
+
+# alternative solution to reduce complexity provided by my Udacity mentor:
+# which would provide the summing of key values thru use of "+=": 
+
+# call_duration = defaultdict(int)
+# for call in calls:
+#     call_duration[call[0]] += int(call[3])
+#     call_duration[call[1]] += int(call[3])

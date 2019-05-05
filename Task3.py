@@ -106,7 +106,7 @@ def fixed_percent(calls):
         if caller_type == 'bangalore' and receiver_type == 'bangalore': 
             from_fixed_to_fixed.append(receiver)
     
-    answer = len(from_fixed_to_fixed) / len(from_fixed) 
+    answer = len(from_fixed_to_fixed) / len(from_fixed)    
     percent = round(answer, 2)
     print(round(percent,2), "percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.\n")
 
