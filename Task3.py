@@ -100,7 +100,7 @@ def fixed_percent(calls):
         caller_type = get_phone_type(caller)
         receiver_type = get_phone_type(receiver)
 
-        if receiver_type == 'bangalore':
+        if caller_type == 'bangalore':
             from_fixed.append(receiver)
 
         if caller_type == 'bangalore' and receiver_type == 'bangalore': 

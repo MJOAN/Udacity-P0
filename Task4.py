@@ -44,6 +44,7 @@ def potential_telemarketers(calls, texts):
         if caller != receiver:
             telemarketers_only.add(caller)
     
+    
     for text in texts:
         sender, receiver = text[0], text[1]
         if sender and receiver not in telemarketers_only:
