@@ -61,7 +61,6 @@ def bangalore_receiver_codes(calls):
     for call in calls:
         caller, receiver = call[0], call[1]
         caller_type = get_phone_type(caller)
-        caller_type = get_phone_type(receiver)
 
         if caller_type == 'bangalore':
             receiver_list.append(receiver)
@@ -82,8 +81,8 @@ def bangalore_receiver_codes(calls):
 bangalore_receiver_codes(calls)
 
 def fixed_percent(calls):
-    from_fixed = []
-    from_fixed_to_fixed = []
+    from_fixed = 0         
+    from_fixed_to_fixed = 0
 
     for call in calls:
         caller, receiver = call[0], call[1]
@@ -91,13 +90,13 @@ def fixed_percent(calls):
         receiver_type = get_phone_type(receiver)
 
         if caller_type == 'bangalore':
-            from_fixed.append(receiver)
+            from_fixed += 1             # counter 
 
         if caller_type == 'bangalore' and receiver_type == 'bangalore': 
-            from_fixed_to_fixed.append(receiver)
+            from_fixed_to_fixed += 1   # counter 
     
-    answer = len(from_fixed_to_fixed) / len(from_fixed)    
-    percent = round(answer, 2) * 100
-    print(int(percent), "percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.\n")
+    answer = from_fixed_to_fixed / from_fixed * 100
+    percent = round(answer, 2) 
+    print(percent, "percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.\n")
 
 fixed_percent(calls)

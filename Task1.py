@@ -20,11 +20,17 @@ Print a message:
 """
 
 def unique_phone_count(calls):        
-    combined = set()
-    for a,b in zip(calls, texts):
-        group = [a[0], a[1], b[0], b[1]]
-        for item in group: 
-            combined.add(item)
+    combined = set() 
+    
+    for call in calls: 
+        outgoing_calls, incoming_calls = call[0], call[1]
+        combined.add(outgoing_calls)
+        combined.add(incoming_calls)
+
+    for text in texts:
+        outgoing_texts, incoming_texts = text[0], text[1]
+        combined.add(outgoing_texts)
+        combined.add(incoming_texts)
 
     return len(combined)
 

@@ -10,12 +10,14 @@ Task0:
 Task1:
 1. Print count of unique phone numbers in calls list: 
     a. assign combined set variable = O(1)
-    b. for loop using zip() on two separate lists N and M = O(N*M) *cite:1
-    c. assign group variable = O(1)
-    d. for loop over group list = O(N) 
-    e. add item each iteration to combined set = O(1)
+    b. for loop over call list = O(N)
+    c. assign two variables = O(1) * 2
+    d. add two variables to set = O(1) * 2
+    d. for loop over text list = O(M) 
+    c. assign two variables = O(1) * 2
+    d. add two variables to set = O(1) * 2
     f. get length of set = O(1)
-    g. result: O(1) * 4 + O(N*M) + O(N) = O(N^2 * M) = O(N^2)
+    g. result: O(1) * 10 + O(N) + O(M) = O(N)
 
 
 Task2:
@@ -29,7 +31,7 @@ Task2:
     g. for loop iterate over phone duration = O(M)
     h. sum and map iteration = O(1) + O(M) 
     i. assign max time variable from dictionary = O(1)
-    j. result: O(1) * 5 + O(N) * 3 + O(M) * 2 = O(N*M))
+    j. result: O(1) * 5 + O(N) * 3 + O(M) * 2 = O(N * M)
 
 
 Task3:
@@ -51,28 +53,31 @@ Task3:
     b. for loop iterate over call list = O(N)
     c. assign four list variables = O(1) * 4
     d. if statement = O(N) 
-    e. add to fixed list = O(N)
+    e. add to fixed list = O(1)
     f. if statement = O(N)
-    g. add to from fixed list = O(N)
-    h. assign two variables for division and round = O(1) * 2
-    d. division and round statement = O(1) * 2
-    e. result = O(1) * 10 + O(N) * 5 = O(N) 
+    g. add to from fixed list = O(1)
+    h. assign two variables = O(1) * 2
+    i. multiplication statement = O(NK)                     *cite: 1, 2
+    d. division and round statement = O(1) * 2 
+    e. result = O(1) * 12 + O(N) * 3 + O(NK) = O(NK)  
 
 Task4:
 1. Print telemarketers list:
-    a. assign telemarketers set variable = O(1)
+    a. assign two set variables = O(1) * 2
     b. for loop over calls list = O(N)
     c. assign two call list variables = O(1) * 4
-    d. if statement on two sets = O(1) 
-    e. add to telemarketers list = O(1)
-    f. for loop over texts list = O(M)
-    g. assign two list variables = O(1) * 2
-    h. if statement = O(M) 
-    i. add to list = O(1) 
+    d. add to two sets = O(1) * 2 
+    e. for loop over texts list = O(M)
+    f. assign two list variables = O(1) * 2 
+    g. add to two sets = O(1) * 2
+    h. assign difference variable = O(1)
+    i. subtract two sets =  O(len(N) + len(M))              *cite: 1
     j. assign result variable = O(1)
-    k. sort telemarketers list = O(N log N)
-    l. result: O(N) + O(1) * 10 + O(M) * 2 = O(N log N * M) = O(N log N)
+    k. sort set = O(N log N)
+    l. result: O(1) * 14 + O(N) + O(M) + O(N log N) + O(len(N) + len(M)) 
+                = O(N * M) + O(N log N) + O(len(N) + len(M))
+                = O(N log N)
 
-Citations: 
-1. https://stackoverflow.com/questions/36877715/what-is-the-time-complexity-of-zip-in-python
-here the article is stating the time complexity of using a built in zip() function in Python.
+Citations:
+1. https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt 
+2. https://wiki.python.org/moin/TimeComplexity
