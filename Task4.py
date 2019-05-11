@@ -24,30 +24,20 @@ Print a message:
 <list of numbers>
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
-def get_phone_type(phone):
-    if phone.startswith('(080)'):
-        return 'bangalore'
-    elif phone.startswith('140'):
-        return 'telemarketer'
-    elif phone.startswith('(0'):
-        return 'fixed_lines'
-    else:
-        return 'mobile_number'
 
 def potential_telemarketers(calls, texts): 
     telemarketers_only = set()
     
     for call in calls:
-        caller, receiver = call[0], call[1]
-        caller_type = get_phone_type(caller)
+        outgoing_calls = call[0] 
+        incoming_calls = call[1] 
         
-        if caller != receiver:
-            telemarketers_only.add(caller)
-    
-    
+        if set(outgoing_calls) != set(incoming_calls):
+            telemarketers_only.add(outgoing_calls)
+     
     for text in texts:
-        sender, receiver = text[0], text[1]
-        if sender and receiver not in telemarketers_only:
+        outgoing_texts = text[0], text[1] 
+        if set(outgoing_texts) not in telemarketers_only:
             result = sorted(telemarketers_only)
             
     print("These numbers could be telemarketers: \n")
